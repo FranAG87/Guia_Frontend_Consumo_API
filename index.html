@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex | Francisco Álvarez</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Mi Pokédex</h1>
+    <p>Explorá el mundo Pokémon utilizando una API pública.</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="busqueda" aria-labelledby="titulo-busqueda">
+      <h2 id="titulo-busqueda">Buscá un Pokémon</h2>
+      
+      <form id="formulario-busqueda">
+        <label for="pokemon-input">Escribe el Nombre o número del Pokémon</label>
+
+        <div class="controles">
+          <input
+            type="text"
+            id="pokemon-input"
+            placeholder="Ejemplo: pikachu"
+            autocomplete="off"
+            required
+          >
+          <button type="submit" id="boton-buscar">Buscar</button>
+          <button type="button" id="boton-aleatorio">Aleatorio</button>
+        </div>
+      </form>
+    </section>
+
+    <p id="mensaje" role="status" aria-live="polite"></p>
+
+    <section
+      id="resultado"
+      class="resultado"
+      aria-label="Información del Pokémon"
+      aria-busy="false"
+    ></section>
+
+    <section class="informacion">
+      <h2>¿Cómo funciona este portal?</h2>
+      <p>
+        Esta página consulta la PokéAPI mediante fetch() en JavaScript.
+        Recibe los datos en formato JSON y los muestra en pantalla.
+      </p>
+      <a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">
+        Conocer la PokéAPI
+      </a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Desarrollado por Francisco Javier Álvarez Gutiérrez</p>
+  </footer>
+</body>
+</html>

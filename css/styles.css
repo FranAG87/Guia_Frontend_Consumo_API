@@ -1,0 +1,279 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.encabezado {
+  padding: 48px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #b91c1c, #ef4444);
+  color: white;
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+}
+
+.encabezado p {
+  margin-bottom: 0;
+}
+
+.contenedor {
+  width: min(100% - 32px, 900px);
+  margin: 32px auto;
+}
+
+.busqueda,
+.informacion,
+.tarjeta-pokemon {
+  padding: 28px;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  background: #1e293b;
+  box-shadow: 0 12px 30px #00000026;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+input {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #64748b;
+  border-radius: 10px;
+  background: #0f172a;
+  color: white;
+  font: inherit;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #facc15;
+  color: #0f172a;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: #fde047;
+  transform: translateY(-2px);
+}
+
+#boton-aleatorio {
+  background: #334155;
+  color: white;
+}
+
+#boton-aleatorio:hover {
+  background: #475569;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 4px;
+}
+
+/* Mensajes de carga y error */
+#mensaje {
+  margin: 24px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+#mensaje:empty {
+  display: none;
+}
+
+.error {
+  padding: 14px;
+  border: 1px solid #f87171;
+  border-radius: 10px;
+  background: #450a0a;
+  color: #fecaca;
+}
+
+/* Tarjeta que generaremos con JavaScript */
+.resultado {
+  margin-top: 24px;
+}
+
+.tarjeta-pokemon {
+  text-align: center;
+}
+
+.numero-pokemon {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.nombre-pokemon {
+  margin: 8px 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.imagen-pokemon {
+  display: block;
+  width: min(100%, 250px);
+  height: 250px;
+  margin: 16px auto;
+  object-fit: contain;
+  background: radial-gradient(circle, #334155, transparent 70%);
+}
+
+.tipos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tipo {
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: #0f172a;
+  color: #facc15;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.datos-pokemon {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.dato {
+  padding: 16px;
+  border-radius: 12px;
+  background: #0f172a;
+}
+
+.dato h3 {
+  margin: 0 0 8px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.dato p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.estadisticas {
+  margin-top: 28px;
+  text-align: left;
+}
+
+.estadistica {
+  margin-bottom: 14px;
+}
+
+.estadistica-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.barra {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #0f172a;
+}
+
+.barra-relleno {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ef4444, #facc15);
+}
+
+/* Información y pie de página */
+.informacion {
+  margin-top: 28px;
+}
+
+.informacion a {
+  color: #7dd3fc;
+}
+
+.pie {
+  padding: 24px 16px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.pie p {
+  margin: 4px 0;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+  .busqueda,
+  .informacion,
+  .tarjeta-pokemon {
+    padding: 20px;
+  }
+
+  .controles {
+    flex-direction: column;
+  }
+
+  input {
+    flex: auto;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .datos-pokemon {
+    grid-template-columns: 1fr;
+  }
+}
