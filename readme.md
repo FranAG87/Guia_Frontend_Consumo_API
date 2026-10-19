@@ -55,7 +55,7 @@ los errores y la reactivacion de los botones.
 3. Mantener una conexion a internet para consultar la API.
 
 ## Repositorio del proyecto
-https://github.com/FranAG87/Guia_Frontend_Consumo_APIx
+https://github.com/FranAG87/Guia_Frontend_Consumo_API
 
 ## Página publicada
 https://FranAG87.github.io/Guia_Frontend_Consumo_API/
